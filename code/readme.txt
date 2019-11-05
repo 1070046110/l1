@@ -17,3 +17,8 @@ n6.c -- n6  -- while无限循环
 
 system  c1.c  -- 调用n5
 execvp  c2.c  -- 调用n5
+
+内存错误测试
+memtest.c -- mt
+
+
