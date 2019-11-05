@@ -13,7 +13,7 @@ int main(void){
 	if(0==setjmp(g_stack_env)){
 		printf("Normal flow\n");
 		printf("1:a=%d,b=%d,c=%d\n",a,b,c);
-		fun1();
+		fun1(&a,&b,&c);
 }else{
 		printf("Long jump flow\n");
 		printf("2:a=%d,b=%d,c=%d\n",a,b,c);
@@ -21,12 +21,14 @@ int main(void){
 	return 0;
 }
 
-static void fun1(void){
+static void fun1(int *a,int *b,int *c){
 	printf("Enter fun1\n");
 	++(*a);
 	++(*b);
 	++(*c);
-	
+	printf("fun1:a=%d,b=%d,c=%d\n",*a,*b,*c);
+	longjmp(g_stack_env,1);
+	printf("Leave fun1\n");
 	//fun2();
 }
 

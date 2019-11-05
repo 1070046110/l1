@@ -21,4 +21,5 @@ execvp  c2.c  -- 调用n5
 内存错误测试
 memtest.c -- mt
 
-
+长跳转
+j1.c -- j1
