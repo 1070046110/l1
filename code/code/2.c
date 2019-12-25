@@ -20,7 +20,7 @@ int main(){
 		exit(0);
 }
 	for(int i=0;i<2;i++){
-		pthread_join(tid[i],NULL);	
+		pthread_join(tid[1],NULL);	
 }
 
 	return 0;
